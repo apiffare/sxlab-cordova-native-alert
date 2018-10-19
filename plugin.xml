@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="none"
+        id="sxlab-cordova-native-alert"
+        version="0.7.0">
+
+  <name>NativeAlert</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/NativeAlert.js" target="js/NativeAlert.js"/>
+
+  <js-module src="www/NativeAlert.js" name="NativeAlert">
+    <clobbers target="NativeAlert" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="NativeAlert">
+        <param name="android-package" value="com.evann.plugin.nativealert"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/NativeAlert.java" target-dir="src/com/evann/plugin/nativealert/"/>
+  </platform>
+
+</plugin>

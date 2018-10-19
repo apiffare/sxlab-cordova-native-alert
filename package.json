@@ -1,0 +1,21 @@
+{
+  "name": "sxlab-native-alert",
+  "version": "0.1.0",
+  "description": "A plugin to show native alerts",
+  "private": true,
+  "cordova": {
+    "id": "sxlab-native-alert",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "alert",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Evann Delaunay",
+  "license": "Apache-2"
+}
