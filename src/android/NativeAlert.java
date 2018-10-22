@@ -1,4 +1,4 @@
-package com.evann.plugin.nativealert
+package com.evann.plugin.nativealert;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
