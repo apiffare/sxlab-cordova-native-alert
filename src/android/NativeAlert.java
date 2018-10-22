@@ -18,6 +18,8 @@ import android.widget.Button;
 
 public class NativeAlert extends CordovaPlugin {
 
+	final Context context = this;
+
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		if (action.equals("alert")) {
