@@ -25,8 +25,12 @@ public class NativeAlert extends CordovaPlugin {
 		if (action.equals("alert")) {
 			String message = args.getString(0);
 			this.alert(message, callbackContext);
+			
+			callbackContext.success("success");
 			return true;
 		}
+		callbackContext.error("error");
+		
 		return false;
 	}
 	
