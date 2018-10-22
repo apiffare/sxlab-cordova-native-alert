@@ -7,6 +7,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
 public class NativeAlert extends CordovaPlugin {
 
 	@Override
@@ -19,23 +28,37 @@ public class NativeAlert extends CordovaPlugin {
 		return false;
 	}
 	
-	private void alert(String message, CallbackContext callbackContext) {
-			
-		AlertDialog.Builder builder;
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert);
-		} else {
-			builder = new AlertDialog.Builder(context);
-		}
-		builder.setTitle("Alert !")
-		.setMessage(message)
-		.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-			new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-			}
-		})
-		.show();
+	private void alert(String message, CallbackContext callbackContext) {	
+		
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
+		// set title
+		alertDialogBuilder.setTitle("Alert");
+
+		// set dialog message
+		alertDialogBuilder
+			.setMessage(message)
+			.setCancelable(false)
+			.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog,int id) {
+					// if this button is clicked, close
+					// current activity
+					MainActivity.this.finish();
+				}
+			  })
+			.setNegativeButton("No",new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog,int id) {
+					// if this button is clicked, just close
+					// the dialog box and do nothing
+					dialog.cancel();
+				}
+			});
+
+			// create alert dialog
+			AlertDialog alertDialog = alertDialogBuilder.create();
+
+			// show it
+			alertDialog.show();
 		
 		callbackContext.success(message);
 	}
