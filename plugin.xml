@@ -23,7 +23,7 @@
       </feature>
     </config-file>
 
-    <source-file src="src/android/NativeAlert.java" target-dir="src/com/nativealert/plugin/"/>
+    <source-file src="src/android/serftfhfth/NativeAlert.java" target-dir="src/com/nativealert/plugin/"/>
   </platform>
 
 </plugin>
