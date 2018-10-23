@@ -19,7 +19,7 @@
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="NativeAlert">
-        <param name="android-package" value="com.evann.plugin.nativealert"/>
+        <param name="android-package" value="com.evann.plugin.nativealert.NativeAlert"/>
       </feature>
     </config-file>
 
