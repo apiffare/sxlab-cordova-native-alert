@@ -9,10 +9,10 @@
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <asset src="www/NativeAlert.js" target="js/NativeAlert.js"/>
+  <asset src="www/nativealert.js" target="js/nativealert.js"/>
 
-  <js-module src="www/NativeAlert.js" name="NativeAlert">
-    <clobbers target="NativeAlert" />
+  <js-module src="www/nativealert.js" name="nativealert">
+    <clobbers target="nativealert" />
   </js-module>
 
   <platform name="android">
