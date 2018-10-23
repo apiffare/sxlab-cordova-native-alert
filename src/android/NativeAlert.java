@@ -20,7 +20,7 @@ public class NativeAlert extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 		if (action.equals("alert")) {
-			String message = args.getString(0);
+			String message = data.getString(0);
 			this.alert(message, callbackContext);
 			
 			callbackContext.success("success");
