@@ -1,11 +1,8 @@
-package com.evann.plugin.nativealert;
+package com.nativealert.plugin;
 
-import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CallbackContext;
-
+import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -21,7 +18,7 @@ public class NativeAlert extends CordovaPlugin {
 	final Context context = this.cordova.getActivity().getApplicationContext();
 
 	@Override
-	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+	public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 		if (action.equals("alert")) {
 			String message = args.getString(0);
 			this.alert(message, callbackContext);
