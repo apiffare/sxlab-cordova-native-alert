@@ -35,25 +35,19 @@ public class NativeAlert extends CordovaPlugin {
 		
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 
-		// set title
 		alertDialogBuilder.setTitle("Alert");
 
-		// set dialog message
 		alertDialogBuilder
 			.setMessage(message)
 			.setCancelable(false)
 			.setNeutralButton("Ok",new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog,int id) {
-					// if this button is clicked, just close
-					// the dialog box and do nothing
 					dialog.cancel();
 				}
 			});
 
-			// create alert dialog
 			AlertDialog alertDialog = alertDialogBuilder.create();
 
-			// show it
 			alertDialog.show();
 		
 		callbackContext.success(message);
